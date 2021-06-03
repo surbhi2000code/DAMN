@@ -1,0 +1,106 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+        <link rel="stylesheet" href="http://127.0.0.1:8000/lol/">
+
+    <title>DAMN!</title>
+    <style>
+        body{
+            text-align: center;
+            background: url(https://www.addictioncenter.com/app/uploads/2020/01/online_shopping_addiction-1024x683.jpeg);
+            background-repeat: no-repeat;
+            background-size: 1570px 900px;
+            font-size: 20px;
+            border-color: black;
+            border-width: 4px;
+            border-style: dotted;
+            margin-top: 40px;
+            margin-bottom: 40px;
+        }
+        .container{
+            margin-top: 59px;
+            margin-left:700px;
+        }
+        h1{
+             color: #9007f2;
+         }
+        form{
+            font-weight: bold;
+        }
+        input{
+            font-size: 22px;
+        }
+        .form-group{
+             margin-top:20px;
+             margin-bottom:20px;
+        }
+        #exampleCheck1{
+              size: 200px;
+        }
+        #fn{
+           margin-bottom: 5px;
+        } #ln{
+           margin-bottom: 5px;
+                      box-sizing: 400px;
+
+        } #mobileno.{
+           margin-bottom: 5px;
+        } #exampleInputEmail1{
+           margin-bottom: 5px;
+        }
+        #don{
+             background-color: white;
+             color: black;
+
+        }
+        #sub{
+        background-color: orange;
+        height: 60px;
+        width: 400px;
+        margin-top: 20px;
+        font-size: 2em;
+        border-radius:25px;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+<h1>Welcome to DAMN!</h1>
+<h2 id="don">If you are a new user fill the following details.... </h2>
+<form action="/lol/" method="post">
+    {{thank}}
+    {% csrf_token %}
+    <div class="form-group">
+<label for="fn">First Name</label>
+    <input type="text" class="form-control" id="fn" name="first_name" placeholder="First Name">
+   </div>
+     <div class="form-group">
+    <label for="ln">Last Name</label>
+    <input type="text" class="form-control" id="ln" name="last_name" placeholder="Last Name">
+     </div>
+          <div class="form-group">
+              <label for="mobileno.">Mobile No.
+          </label>
+              <input type="tel" class="form-control" id="mobileno." name="mobile">
+          </div>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" name="email" aria-describedby="emailHelp" placeholder="xyz@gmail.com">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+  </div>
+<a href="/lol/"><button type="submit" id="sub" class="btn btn-primary">Log In</button></a>
+</form></div>
+</body>
+{% block js %}
+  <script>
+              {% if thank %}
+    alert(' Thanks for Signing Up! ');
+    document.location = "/ecom/user/";
+              {% endif %}
+      </script>
+              {% endblock %}
+
+</html>
