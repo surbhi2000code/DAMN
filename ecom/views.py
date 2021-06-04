@@ -9,9 +9,9 @@ def user(request):
         last_name = request.POST.get('last_name', '')
         email = request.POST.get('email', '')
         mobile = request.POST.get('mobile', '')
-        user = User(first_name=first_name, email=email, last_name=last_name, mobile=mobile)
+        user = User.objects.create_user(first_name=first_name, email=email, last_name=last_name, mobile=mobile)
         user.save()
-        thank = True
+        thank = "User created..!"
         return render(request, "index.html", {'thank': thank})
     print(request.POST)
 
