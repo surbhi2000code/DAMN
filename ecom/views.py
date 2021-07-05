@@ -14,7 +14,7 @@ def user(request):
         user = User.objects.create_user(first_name=first_name, email=email, last_name=last_name, mobile=mobile)
         user.save()
         thank = "User created..!"
-        return render(request, "/lol/templates/lol/index.html", {'thank': thank})
+        return render(request, "lol/templates/lol/index.html", {'thank': thank})
     print(request.POST)
 
     return render(request, 'index.html')
