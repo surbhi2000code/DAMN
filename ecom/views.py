@@ -5,6 +5,7 @@ from .models import User
 
 def user(request):
     if request.method == "POST":
+        thank = False
         first_name = request.POST.get('first_name', '')
         last_name = request.POST.get('last_name', '')
         email = request.POST.get('email', '')
