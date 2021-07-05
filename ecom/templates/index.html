@@ -67,8 +67,7 @@
 <div class="container">
 <h1>Welcome to DAMN!</h1>
 <h2 id="don">If you are a new user fill the following details.... </h2>
-<form action=lol/ method="post">
-    {{thank}}
+<form method="POST">
     {% csrf_token %}
     <div class="form-group">
 <label for="fn">First Name</label>
@@ -91,7 +90,7 @@
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
   </div>
-<a href="/lol/"><button type="submit" id="sub" class="btn btn-primary">Log In</button></a>
+<button type="submit" id="sub" class="btn btn-primary">Log In</button>
 </form></div>
 </body>
 {% block js %}
